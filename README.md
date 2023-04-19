@@ -36,11 +36,7 @@ We will focus our attention on working within CML, using all it has to offer, wh
 
 #### Login into the CDP tenant
 
-You have been given a user name and password and a url to the CDP tenant in the chat.
-When you enter the url in your browser you get following login page, where you now enter
-your given user name and password
-
-![cdptenantmarketing](images/cdptenantmarketing.png)
+You have been given a user name and password and a url to the CDP tenant. 
 
 In case of success you should get to this home page of the CDP tenant:
 ![cdphomepage](images/cdphomepage.png)
