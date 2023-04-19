@@ -96,7 +96,7 @@ You will be greeted with a pop-up window to get you started connecting to pre-po
 
 Script 0: Preparing the workspace, installing dependencies and setting storage location
 
-- Navigate to code0_bootstrap.py on the left pane
+- Navigate to code0/_bootstrap.py on the left pane
 
 The script has a .py extension and therefore is ideally suited for execution with the Workbench editor. No modifications to the code are required and it can be executed as is.
 
