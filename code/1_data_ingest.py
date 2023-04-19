@@ -124,6 +124,7 @@ cml = CMLBootstrap(HOST, USERNAME, API_KEY, PROJECT_NAME)
 
 # Set the STORAGE environment variable
 # TODO: this code block is repeated from 0_bootstrap.py -- fix this
+"""
 try:
     storage = os.environ["STORAGE"]
 except:
@@ -147,7 +148,7 @@ except:
     # create and set storage environment variables
     storage_environment = cml.create_environment_variable({"STORAGE": storage})
     os.environ["STORAGE"] = storage
-    
+"""
 
 
 spark = SparkSession.builder.appName("PythonSQL").master("local[*]").getOrCreate()
@@ -197,7 +198,7 @@ hive_table = os.environ["HIVE_TABLE"]
 hive_table_fq = hive_database + "." + hive_table
 
 if os.environ["STORAGE_MODE"] == "external":
-    path = f"{storage}/{data_location}/WA_Fn-UseC_-Telco-Customer-Churn-.csv"
+    path = f"HU/OTP/WA_Fn-UseC_-Telco-Customer-Churn-.csv"
 else:
     path = "/home/cdsw/raw/WA_Fn-UseC_-Telco-Customer-Churn-.csv"
 

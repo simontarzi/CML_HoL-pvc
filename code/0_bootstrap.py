@@ -131,16 +131,17 @@ def run_cmd(cmd, raise_err=True):
 # for project build
 try:
     dataset_check = run_cmd(
-        f'hdfs dfs -test -f {os.environ["STORAGE"]}/{os.environ["DATA_LOCATION"]}/WA_Fn-UseC_-Telco-Customer-Churn-.csv',
+#        f'hdfs dfs -test -f {os.environ["STORAGE"]}/{os.environ["DATA_LOCATION"]}/WA_Fn-UseC_-Telco-Customer-Churn-.csv',
+        f'hdfs dfs -test -f /HU/OTP/WA_Fn-UseC_-Telco-Customer-Churn-.csv'
         raise_err=False,
     )
 
     if dataset_check.returncode != 0:
+#        run_cmd(
+#            f'hdfs dfs -mkdir -p {os.environ["STORAGE"]}/{os.environ["DATA_LOCATION"]}'
+#        )
         run_cmd(
-            f'hdfs dfs -mkdir -p {os.environ["STORAGE"]}/{os.environ["DATA_LOCATION"]}'
-        )
-        run_cmd(
-            f'hdfs dfs -copyFromLocal /home/cdsw/raw/WA_Fn-UseC_-Telco-Customer-Churn-.csv {os.environ["STORAGE"]}/{os.environ["DATA_LOCATION"]}/WA_Fn-UseC_-Telco-Customer-Churn-.csv'
+            f'hdfs dfs -copyFromLocal /home/cdsw/raw/WA_Fn-UseC_-Telco-Customer-Churn-.csv /HU/OTP//WA_Fn-UseC_-Telco-Customer-Churn-.csv'
         )
     cml.create_environment_variable({"STORAGE_MODE": "external"})
 except RuntimeError as error:
