@@ -62,32 +62,17 @@ A Workspace is a cluster that runs on a kubernetes service to provide teams of d
 
 ![password](images/password.png)
 
-In a workspace, Projects view is the default and you’ll be presented with all public (within your organization) and your own projects, if any. In this lab we will be creating a project based on Applied ML Prototype.
+In a workspace, Projects view is the default and you’ll be presented with all public (within your organization) and your own projects, if any. In this lab we will be creating a project based on Applied ML Prototype from external files.
 
-- Click on *AMPs* in the side panel and search for “workshop”
+- Click on *Projects* in the side panel and create “New Project” on the right
 
-![amps](images/amps.png)
+![amps](images/new_project.png)
 
-- Click on the AMP card and then on *Configure Project*
+- add a unique name amd select *Local Files* and drag n drop the Zip files downloaded from the following git repo: TODO
 
-![ampcard](images/ampcard.png)
+![ampcard](images/create_project.png)
 
-
-**IMPORTANT!**
-In the Configure Project screen, change the HIVE_TABLE to have a unique suffix. Leave the other environment variables as is.
-
-
-| variable | value |
-| ----------- | ----------- |
-| DATA_LOCATION | my-data/churn_prototype |
-| HIVE_DATABASE | data/default |
-| HIVE_TABLE | churn_protype_YOUR UNIQUE VALUE |
-
-
-![envparams](images/envparams.png)
-
-
-- Click *Launch Project*
+- Hit *Create project*! 
 
 ## Lab 2: Data Loading and interactive Analysis (20 min)
 
@@ -109,14 +94,22 @@ Once you see the flashing red line on the bottom of the session pane turn steady
 
 You will be greeted with a pop-up window to get you started connecting to pre-populated Data Lake sources (e.g. virtual Data Warehouses). You could simply copy the code snippet provided and easily connect to, say, a Hive vDW. However, in this lab we won’t be using this feature.
 
+Script 0: Preparing the workspace, installing dependencies and setting storage location
+
+- Navigate to code0_bootstrap.py on the left pane
+
+The script has a .py extension and therefore is ideally suited for execution with the Workbench editor. No modifications to the code are required and it can be executed as is.
+
+You can execute the entire script in bulk by clicking on the “play icon” on the top menu bar. Once you do this you should notice the editor bar switches from green to red.
+As an alternative you can select subsets of the code and execute those only. This is great for troubleshooting and testing. To do so, highlight a number of lines of code from your script and then click on “Run” -> “Run Lines” from the top menu bar.
+
+Important! Run All lines in this script
+
 Script 1: Ingest Data
 
 - Navigate to code/1_data_ingest.py
 
-In this script you will ingest a raw csv file into a Spark Dataframe. The script has a .py extension and therefore is ideally suited for execution with the Workbench editor. No modifications to the code are required and it can be executed as is.
-
-You can execute the entire script in bulk by clicking on the “play icon” on the top menu bar. Once you do this you should notice the editor bar switches from green to red.
-As an alternative you can select subsets of the code and execute those only. This is great for troubleshooting and testing. To do so, highlight a number of lines of code from your script and then click on “Run” -> “Run Lines” from the top menu bar.
+In this script you will ingest a raw csv file into a Spark Dataframe. 
 
 Important! Run All lines in this script
 
